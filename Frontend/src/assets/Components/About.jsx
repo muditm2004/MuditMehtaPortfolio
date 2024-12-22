@@ -9,19 +9,17 @@ export default function About() {
       <div className="aboutContainer">
         <h1>About</h1>
         <p>
-          I love blending design, technology, and business strategy to craft impactful
-          digital experiences. With a passion for problem-solving, user-focused
-          design, and strategic thinking, I aim to bridge the gap between ideas
-          and execution. Let’s connect and build something meaningful!
+          With the love of blending UX, Tech, and Business acumen to craft
+          impactful digital experiences, and a passion for problem-solving, user
+          focused design solutions and strategic thinking, I aim to bridge the
+          the gap between ideas and execution.
         </p>
         <p>
-          With a solid foundation in web development and Python, I thrive on
-          exploring new ways to elevate user interaction and streamline business
-          essentials.
+          With a solid foundation in Web Development, Python & UX Design, I
+          thrive on exploring new ways to elevate user interaction and
+          streamline business essentials.
         </p>
-        <p>
-          Let’s connect and see how we can shape the digital future together!
-        </p>
+        <p>Let's connect and build something meaningful!!</p>
       </div>
 
       <div className="aboutContainer">
