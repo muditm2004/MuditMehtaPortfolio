@@ -170,6 +170,22 @@ a{
   margin-bottom: 10px;
 }
 
+.aboutContainer > ul{
+  margin-left: 20px;
+}
+
+.aboutContainer li:first-child{
+  margin-top: 20px;
+}
+
+.aboutContainer li{
+  margin-bottom:10px;
+}
+
+.aboutContainer li:last-child{
+  margin-bottom:0px;
+}
+
 .linksContainer {
   display: flex;
   gap: 10px;
@@ -300,6 +316,7 @@ a{
   padding: 0px 20px 20px 20px;
   display: flex;
   flex-direction: column;
+  width: 80%;
 }
 
 .ContentRight h3 {
@@ -315,12 +332,114 @@ a{
 .ContentRight h6 {
   font-style: italic;
   font-weight: 600;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: rgb(178, 178, 178);
 }
 
-.ContentRight p {
+.ContentRight ul {
   margin-bottom: 30px;
+}
+
+.experienceSkills{
+  max-width: 100%;
+  display: flex;
+}
+.galleryflex{
+  display: flex;
+  align-items: center;
+  gap:20px;
+  margin-bottom: 30px;
+}
+
+.galleryflex svg{
+  /* display: none; */
+}
+
+.eduGallery{
+  display: flex;
+  align-items: center;
+  gap:30px;
+  width: 100%;
+  overflow-x: auto;
+  background-color: rgba(216, 34, 34, 0);
+  
+}
+
+.GalleryImg{
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  height: 100px;
+  width: 200px;
+  background-color: blue;
+}
+
+.GalleryImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.eduGallery::-webkit-scrollbar{
+  display: none;
+}
+
+.lightboxWindow{
+  background-color: rgba(2, 2, 2, 0.926);
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+}
+
+.closebtn{
+  height: fit-content;
+  background-color: transparent;
+  /* opacity: 20%; */
+}
+
+.ImageView{
+  background-color: transparent;
+  height:500px;
+  padding: 0px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Image{
+  background-color: transparent;
+  height: 100%;
+  width: 80%;
+}
+
+.Image>img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Thumbnails{
+  margin-top: 20px;
+  height: 10%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.Thumbnails>img{
+  width: 100px;
+  height: 90%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .Content:last-child .Progress {
@@ -572,8 +691,9 @@ a{
   position: relative;
   z-index: 2;
   object-fit: contain;
-  width: 120px; /* Adjust size as needed */
-  height: auto;
+   /* Adjust size as needed */
+  height: 80%;
+  width: 50%;
 }
 
 .contactFormContainer {
@@ -752,7 +872,12 @@ a{
   }
 
   .ContentRight {
+    
     padding-right: 0px;
+  }
+
+  .experienceSkills{
+    flex-direction: column;
   }
 
   .aboutContainer h2 {
@@ -776,5 +901,19 @@ a{
     transform: none;
   }
 
+  .eduGallery{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .galleryFlex{
+    flex-direction: column;
+    /* width: 100%; */
+    gap:2px;
+  }
+
+  .GalleryImg{
+    width: 180px;
+  }
   
 }

@@ -10,7 +10,6 @@ export default function CardPage() {
   const { id } = useParams();
   const location = useLocation();
 
-
   const { DevProjects, DesProjects, currentProject, setCurrentProject } =
     useContext(Provider);
 
@@ -48,25 +47,31 @@ export default function CardPage() {
   return (
     <>
       <div className="pageBanner">
-        <img src={currentProject.Images.CardNBanner} alt="" />
-        <img src={currentProject.Images.Logo} alt="" />
+        <img src={currentProject.Thumbnail} alt="" />
+        <img src={currentProject.Logo} alt="" />
       </div>
 
-      <div className="aboutContainer">
-        <h1>What is {currentProject.Name}</h1>
-        <p>{currentProject.Content.What}</p>
-      </div>
+      {/* <div className="aboutContainer">
+        <h1>About {currentProject.Name}</h1>
+        <p>{currentProject.Desc.What}</p>
+      </div> */}
 
       <div className="aboutContainer">
-        <h1>How it was made</h1>
-
-        <p>{currentProject.Content.How}</p>
+        <h1>About {currentProject.Name}</h1>
+        <ul>
+          <li>{currentProject.Desc.TechBG[0]}</li>
+          <li>{currentProject.Desc.TechBG[1]}</li>
+          <li>{currentProject.Desc.TechBG[2]}</li>
+        </ul>
+        {currentProject.Desc.TechBG.map((para) => {
+          <p> hhh </p>;
+        })}
       </div>
 
       <div className="aboutContainer">
         <h1>Skills Used</h1>
         <div className="tagContainer" style={{ marginBottom: "0px" }}>
-          {currentProject.Content.Skills.map((skill, index) => (
+          {currentProject.Desc.Skills.map((skill, index) => (
             <>
               <Tag tagName={skill.Name} color={skill.Color} />
             </>
@@ -79,9 +84,9 @@ export default function CardPage() {
 
         <div className="linksContainer">
           <div className="linksContainer-LinkCol">
-            {console.log(currentProject.Content.Links.Github)}
-            {currentProject.Content.Links.Github && (
-              <a href={currentProject.Content.Links.Github}>
+            {console.log(currentProject.Links.Github)}
+            {currentProject.Links.Github && (
+              <a href={currentProject.Links.Github}>
                 {" "}
                 <p>
                   <BsGithub size={25} />
@@ -89,8 +94,8 @@ export default function CardPage() {
                 </p>
               </a>
             )}
-            {currentProject.Content.Links.Behance && (
-              <a href={currentProject.Content.Links.Behance}>
+            {currentProject.Links.Behance && (
+              <a href={currentProject.Links.Behance}>
                 {" "}
                 <p>
                   <IoLogoBehance size={25} />
@@ -98,8 +103,8 @@ export default function CardPage() {
                 </p>
               </a>
             )}
-            {currentProject.Content.Links.Weblink && (
-              <a href={currentProject.Content.Links.Weblink}>
+            {currentProject.Links.Weblink && (
+              <a href={currentProject.Links.Weblink}>
                 {" "}
                 <p>
                   <IoGlobeSharp size={25} />

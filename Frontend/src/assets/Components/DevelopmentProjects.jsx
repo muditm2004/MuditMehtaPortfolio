@@ -38,9 +38,9 @@ export default function DevelopmentProjects() {
                 {Object.values(categories[category]).map((project) => {
                   return(
                   <Card
-                  img={project.Images.CardNBanner}
+                  img={project.Thumbnail}
                   name={project.Name}
-                  desc={project.Desc}
+                  desc={project.Desc.What}
                   id={project._id}
                   onClick={CardClickhandler}
                 />)

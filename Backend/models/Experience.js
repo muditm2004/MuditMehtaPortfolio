@@ -5,8 +5,14 @@ const experienceSchema = mongoose.Schema(
     Organization: String,
     Logo: String,
     Role: String,
-    Duration: String,
-    Description: String,
+    StartDate: String,
+    EndDate: String,
+    Description: [String],
+    Skills: [{
+      Name:String,
+      Color:String
+    }]
+
 
   },
   { collection: "Experience" }

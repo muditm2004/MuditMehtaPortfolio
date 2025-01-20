@@ -1,9 +1,18 @@
 const mongoose = require("mongoose");
+const { type } = require("os");
 
 const ProjectSchema = mongoose.Schema({
     Name: {
         type: String,
         required: true
+    },
+    Thumbnail:{
+        type: String,
+        required:true
+    },
+    Logo:{
+        type: String,
+        required:true
     },
     Type: {
         type: String,
@@ -13,39 +22,24 @@ const ProjectSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    Content: {
-        What: {
-            type: String,
-            required: true
+    Desc:{
+        What:{
+            type:String,
+            required:true
         },
-        How: {
-            type: String,
-            required: true
-        },
-        Skills: [
+        techBG:[String],
+        Skills:[
             {
                 Name:String,
                 Color:String,
             }
-        ],
-        Links: {
-            Github: {
-                type: String,
-                
-            },
-            Behance: {
-                type: String,
-                
-            },
-            Weblink: {
-                type: String,
-                required: true
-            }
-        },
-        Images: {
-            CardNBanner: {type: String, required: true},
-            Logo:{type: String, required: true},
-        }
+        ]
+    },
+    Links:{
+        Github:String,
+        Behance:String,
+        Weblink:String,
+        CaseStudy:String
     }
 },{ collection: 'Projects' });
 

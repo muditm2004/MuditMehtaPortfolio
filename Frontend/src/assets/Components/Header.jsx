@@ -26,14 +26,14 @@ export default function Header() {
     typewriter
       .pauseFor(2)
       .typeString(
-        "Design<strong> • </strong>Develop<strong> • </strong>Deliver"
+        "Design • Develop<strong> • Deliver"
       )
       .pauseFor(1000)
       .deleteAll()
-      .typeString("Create • Collab • Communicate")
+      .typeString("Communicate • Collab • Create")
       .pauseFor(1000)
       .deleteAll()
-      .typeString("Build • Balance • Brainstorm")
+      .typeString("Brainstorm • Balance • Build")
       .pauseFor(1000)
       .deleteAll()
       .start();

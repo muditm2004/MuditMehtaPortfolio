@@ -1,10 +1,23 @@
 import React, { useContext } from "react";
 import Card from "./Card";
+import { useNavigate } from "react-router-dom";
 
 import { Provider } from "../Context/MyContext";
 export default function DesignProjects() {
   const { DesProjects } = useContext(Provider);
+  const navigate= useNavigate();
   
+  function CardClickhandler(e){
+    let id=e.target.id;
+    
+    navigate(`/DesProjects/${id}`);
+    
+      
+      
+  }
+
+
+
     let categories = {};
     DesProjects.forEach((element) => {
       if (!categories[element.Category]) {
@@ -25,9 +38,11 @@ export default function DesignProjects() {
                   {Object.values(categories[category]).map((project) => {
                     return(
                     <Card
-                    img={project.Images.CardNBanner}
+                    img={project.Thumbnail}
                     name={project.Name}
-                    desc={project.Desc}
+                    desc={project.Desc.What}
+                    id={project._id}
+                    onClick={CardClickhandler}
                   />)
                   })}
                   

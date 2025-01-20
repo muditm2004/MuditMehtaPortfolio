@@ -5,9 +5,11 @@ const educationSchema = mongoose.Schema(
     Institute: String,
     Logo: String,
     Study: String,
-    Duration: String,
-    Description: String,
-
+    Desc: [String],
+    Images:[{
+      Title:String,
+      url:String
+    }]
   },
   { collection: "Education" }
 );

@@ -8,11 +8,8 @@ export default function MyContext({ children }) {
   const [currentTab, setCurrentTab] = useState(() => {
     if (location.pathname === "/") {
       return "AboutMe";
-    } 
-    else {
-     
-      return location.pathname.split('/')[1]
-    
+    } else {
+      return location.pathname.split("/")[1];
     }
   });
   const [currentProject, setCurrentProject] = useState("");
@@ -24,6 +21,7 @@ export default function MyContext({ children }) {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
+
 
   useEffect(() => {
     fetch(`/getProjects`)
@@ -77,7 +75,7 @@ export default function MyContext({ children }) {
     const form = document.querySelector(".contactFormContainer");
     if (contactFormVisible) {
       if (form) {
-        document.body.style.overflow='hidden';
+        document.body.style.overflow = "hidden";
         document.querySelector(".contactFormContainer").style.display = "flex";
         document.querySelector("#Name").value = "";
         document.querySelector("#Email").value = "";
@@ -87,7 +85,7 @@ export default function MyContext({ children }) {
     } else {
       if (form) {
         form.style.display = "none";
-        document.body.style.overflow='auto';
+        document.body.style.overflow = "auto";
       }
     }
   }, [contactFormVisible]);
@@ -112,7 +110,7 @@ export default function MyContext({ children }) {
         experience,
         setExperience,
         education,
-        setEducation,
+        setEducation
       }}
     >
       {children}
