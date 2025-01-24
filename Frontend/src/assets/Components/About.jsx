@@ -11,9 +11,15 @@ export default function About() {
   const { experience, education } = useContext(Provider);
 
   function calcDuration(startDate, endDate) {
+    let start
+    let end
     // Parse the input in "MMMM YYYY" format (e.g., "January 2020")
-    const start = moment(startDate, "MMMM YYYY");
-    const end = moment(endDate, "MMMM YYYY");
+     start = moment(startDate, "MMMM YYYY");
+    if(endDate.toLowerCase()==='present'){
+      return (`${startDate}-Present`)}
+    else{
+       end = moment(endDate, "MMMM YYYY");
+    }
   
     if (!start.isValid() || !end.isValid()) {
       return "Invalid date format";
@@ -59,7 +65,7 @@ export default function About() {
               <>
                 <div className="Content">
                   <div className="ContentLeft">
-                    <div className="currentPlaceBlur"></div>
+                    <div className="currentPlaceBlur" style={(exp.EndDate.toLowerCase()==='present')?{display:"block"}:{display:"none"}}></div>
                     <img src={exp.Logo} className="ProgressLogo" />
                     <div className="Progress"></div>
                   </div>
@@ -77,7 +83,7 @@ export default function About() {
                       })}
                     </ul>
                     {/* <p>{exp.Desc}</p> */}
-                    <div className="tagContainer">
+                    <div className="tagContainer" id="expTag">
                       {
                         exp.Skills.map((skill,idx)=>{
                           return(

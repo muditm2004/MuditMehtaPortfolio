@@ -287,7 +287,7 @@ a{
   filter: blur(10px);
   z-index: 0;
   animation: currentBlur 2s infinite;
-  display: none;
+  /* display: none; */
 }
 
 @keyframes currentBlur {
@@ -461,9 +461,9 @@ a{
   margin-bottom: 0;
 }
 
-.Content:first-child .currentPlaceBlur {
+/* .Content:first-child .currentPlaceBlur {
   display: block;
-}
+} */
 
 .projectHead {
   text-align: center;
@@ -560,6 +560,12 @@ a{
   padding: 0px 12.5%;
   justify-content: center;
   justify-self: center;
+}
+
+#expTag{
+  justify-content: flex-start;
+  margin-top: 0px;
+  padding: 0px;
 }
 
 .tag {
