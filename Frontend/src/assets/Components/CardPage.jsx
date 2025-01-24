@@ -20,7 +20,7 @@ export default function CardPage() {
         project = DevProjects.find((project) => project._id === id);
         setCurrentProject(project);
       } else {
-        const resp = fetch(`/prjectDetails/${id}`)
+        const resp = fetch(`${import.meta.env.VITE_API_URL}/prjectDetails/${id}`)
           .then((res) => res.json())
           .then((data) => setCurrentProject(data));
       }

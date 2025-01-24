@@ -24,21 +24,21 @@ export default function MyContext({ children }) {
 
 
   useEffect(() => {
-    fetch(`/getProjects`)
+    fetch(`${import.meta.env.VITE_API_URL}/getProjects`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setProjects(data);
       });
 
-    fetch(`/getSkills`)
+    fetch(`${import.meta.env.VITE_API_URL}/getSkills`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setSkills(data);
       });
 
-    fetch(`/getExperience`)
+    fetch(`${import.meta.env.VITE_API_URL}/getExperience`)
       .then((res) => res.json())
       .then((data) => {
         data.reverse();
@@ -46,7 +46,7 @@ export default function MyContext({ children }) {
         setExperience(data);
       });
 
-    fetch(`/getEducation`)
+    fetch(`${import.meta.env.VITE_API_URL}/getEducation`)
       .then((res) => res.json())
       .then((data) => {
         data.reverse();
