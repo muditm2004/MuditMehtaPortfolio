@@ -77,7 +77,7 @@ export default function About() {
                       })}
                     </ul>
                     {/* <p>{exp.Desc}</p> */}
-                    <div className="experienceSkills">
+                    <div className="tagContainer">
                       {
                         exp.Skills.map((skill,idx)=>{
                           return(
