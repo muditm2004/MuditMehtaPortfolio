@@ -21,6 +21,7 @@ export default function MyContext({ children }) {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
+  const [featured, setFeatured] = useState([]);
 
 
   useEffect(() => {
@@ -53,6 +54,14 @@ export default function MyContext({ children }) {
         console.log("Education:", data);
         setEducation(data);
       });
+
+      fetch(`${import.meta.env.VITE_API_URL}/getFeatured`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Featured:", data);
+        setFeatured(data);
+      });
+
   }, []);
 
   useEffect(() => {
@@ -110,7 +119,8 @@ export default function MyContext({ children }) {
         experience,
         setExperience,
         education,
-        setEducation
+        setEducation,
+        featured, setFeatured
       }}
     >
       {children}

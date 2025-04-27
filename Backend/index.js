@@ -10,6 +10,7 @@ const ProjectSchema = require('./models/Projects');
 const SkillsSchema = require('./models/Skills');
 const ExperienceSchema = require('./models/Experience');
 const EducationSchema = require('./models/Education')
+const FeaturedSchema = require('./models/Featured')
 
 
 
@@ -103,6 +104,17 @@ async function connectDB() {
     res.status(500).json({message:err.message});
   }
  })
+
+ server.get('/getFeatured',async(req,res)=>{
+    
+  try{
+      const featured=await FeaturedSchema.find();
+      res.status(200).json(featured);
+  }
+  catch(err){
+      res.status(500).json({message:err.message});
+  }
+})
 
 
 

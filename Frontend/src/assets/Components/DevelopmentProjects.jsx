@@ -40,7 +40,7 @@ export default function DevelopmentProjects() {
                   <Card
                   img={project.Thumbnail}
                   name={project.Name}
-                  desc={project.Desc.What}
+                  desc={project.oneLiner}
                   id={project._id}
                   onClick={CardClickhandler}
                 />)

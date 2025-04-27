@@ -141,6 +141,92 @@ a{
   font-weight: 700;
 }
 
+/* Wrapper for the gallery and arrows */
+.galleryWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Scrollable gallery container */
+.galleryContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.galleryContainer::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Edge, etc. */
+}
+
+/* Gallery cards container */
+.gallery {
+  display: flex;
+  gap: 16px;
+}
+
+/* Each card */
+.imageCard {
+  background-color: #16171D;
+  border: 1px solid #16171D;
+  border-radius: 12px;
+  overflow: hidden;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card image */
+.cardImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Card text */
+.cardText {
+  padding: 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftArrow {
+  left: 10px;
+}
+
+.rightArrow {
+  right: 10px;
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
 .aboutContainer {
   margin: 20px;
   /* display: none; */
@@ -152,6 +238,21 @@ a{
   background-color: var(--TabInactive);
   border: 1px solid rgba(255, 255, 255, 0.125);
   color: white;
+}
+
+
+
+#problemStatement{
+  background-color:hsl(301.18deg 100% 19.63%);
+  margin: 25px;
+}
+
+#problemStatementHead{
+ border-bottom: 0.2px solid hsl(0deg 0% 100% / 51%);
+}
+
+#problemStatement h1{
+  margin:0px;
 }
 
 .aboutContainer h1 {
@@ -332,12 +433,12 @@ a{
 .ContentRight h6 {
   font-style: italic;
   font-weight: 600;
-  /* margin-bottom: 20px; */
+  margin-top: 3px;
   color: rgb(178, 178, 178);
 }
 
 .ContentRight ul {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .experienceSkills{
@@ -694,14 +795,23 @@ a{
   z-index: 1;
 }
 
-.pageBanner > img:last-child {
+.pageBanner h1{
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* .pageBanner > img:last-child {
   position: relative;
   z-index: 2;
   object-fit: contain;
-   /* Adjust size as needed */
+
   height: 80%;
   width: 50%;
-}
+} */
 
 .contactFormContainer {
   display: flex;
@@ -774,7 +884,9 @@ a{
   margin: 10px;
   border-radius: 20px;
   max-width: 100%;
+  min-width: 100%;
   max-height: 30svh;
+  min-height: 10svh;
   font-family: "Montserrat";
   color: white;
 }
@@ -923,5 +1035,148 @@ a{
     width: 180px;
   }
   
+  .cardPage-content-dualSection{
+    display: flex;
+    flex-direction: column !important ;
+    margin: 0px !important;
+
+  }
+
+  .col{
+    width: 100% !important;
+    margin: 10px 0px;
+  }
+
+  #cardPage-card{
+    margin: 0px !important;
+    height: auto !important;
+    aspect-ratio: 3/2 !important;
+    cursor: auto !important;
+  }
+
 }
 
+.cardpage{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.cardPage-content{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* background-color: #A84FFF; */
+}
+
+.cardPage-content-dualSection{
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  /* background-color: #A84FFF; */
+  height: auto;
+  margin: 20px 10px;
+}
+
+.col{
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Stretch content to fill the parent */
+  justify-content: center; /* Align items to the top */
+}
+
+.col img{
+  /* height: 50%; */
+  width: 35%;
+  object-fit: cover;
+}
+
+.cardpage-contentLeft{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+  margin-top: 10px;
+  gap: 20px;
+  height: 70%;
+  width: 50%;
+  height: fit-content;
+  /* background-color: red; */
+}
+
+.page{
+  margin: 30px;
+  /* height: 70px; */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* align-items: center; */
+  border-radius: 20px;
+  /* background-color: #A84FFF; */
+  background-color: hsl(0, 73%, 63%);
+  /* border: 1px solid rgb(255, 255, 255); */
+  /* box-shadow: 2px 2px 50px hsl(270, 100%, 55%), 4px 4px 0px rgb(255, 255, 255), 4px 2px 0px rgb(255, 255, 255), 2px 4px 0px rgb(255, 255, 255); */
+  /* box-shadow: 2px 2px 20px hsl(270, 100%, 55%); */
+  box-shadow: 2px 2px 20px rgba(227, 74, 74, 0.772);
+}
+
+#aboutProject{
+  background-color: #1E2029;
+  height: 100%;
+  /* box-shadow: 2px 2px 20px #3f3f3f; */
+}
+
+#aboutProjectHead{
+  /* border-bottom: 0.5px solid white */
+}
+
+.pageHead{
+  color:white;
+  font-size: small;
+  width: 95%;
+  text-align: center;
+  /* background-color: pink; */
+  /* border-bottom: 0.5px solid rgb(235, 135, 135); */
+  margin-bottom: 10px;
+  /* padding-bottom: 10px; */
+}
+.cardPage-content-right{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: auto;
+  /* background-color: pink; */
+
+}
+
+.cardPage-content-right img{
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+
+  height: 100px;
+
+}
+
+.pageContent-w{
+  color: white;
+  /* line-height: 22px; */
+}
+
+#cardPage-card{
+  margin: 20px;
+  height: 100%;
+  aspect-ratio: unset;
+  cursor: auto;
+}
+#cardPage-card :hover{
+  transform: none;
+  transition: none;
+}

@@ -76,10 +76,10 @@ export default function Header() {
           <Tab tabName="About Me" id="AboutMe" icon={<FaUserCircle id="About Me" color="white" size={20}/>}  />
           {/* </NavLink> */}
           {/* <NavLink to={"/devprojects"}> */}
-          <Tab tabName="Developed" id="DevProjects" icon={<FaCode color="white" id="DevProjects" size={20}/>} />
+          <Tab tabName="Builds" id="DevProjects" icon={<FaCode color="white" id="DevProjects" size={20}/>} />
           {/* </NavLink> */}
           {/* <NavLink to={"/designprojects"}> */}
-          <Tab tabName="Designed" id="DesProjects" icon={<FaBezierCurve color="white" id="DesProjects" size={20}/>}/>
+          <Tab tabName="UX & Brand" id="DesProjects" icon={<FaBezierCurve color="white" id="DesProjects" size={20}/>}/>
           {/* </NavLink> */}
           {/* <NavLink to={"/skills"}> */}
           <Tab tabName="Skills" id="Skills" icon={<FaTools color="white" id="Skills" size={20} />}/>

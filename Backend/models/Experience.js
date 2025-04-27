@@ -11,8 +11,8 @@ const experienceSchema = mongoose.Schema(
     Skills: [{
       Name:String,
       Color:String
-    }]
-
+    }],
+    Images:[{src:String,Title:String}]
 
   },
   { collection: "Experience" }

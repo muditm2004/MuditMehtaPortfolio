@@ -22,12 +22,14 @@ const ProjectSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    oneLiner: String,
     Desc:{
-        What:{
-            type:String,
-            required:true
-        },
-        techBG:[String],
+        About:String,
+        Problem:String,
+        Features:[String],
+        Strategy:[String],
+        Challenges:[String],
+        Impact:[String],
         Skills:[
             {
                 Name:String,
@@ -45,3 +47,6 @@ const ProjectSchema = mongoose.Schema({
 
 
 module.exports = mongoose.model("Projects", ProjectSchema);
+
+
+

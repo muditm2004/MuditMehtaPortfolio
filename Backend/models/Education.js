@@ -5,6 +5,7 @@ const educationSchema = mongoose.Schema(
     Institute: String,
     Logo: String,
     Study: String,
+    Duration: String,
     Desc: [String],
     Images:[{
       Title:String,
