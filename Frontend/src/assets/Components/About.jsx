@@ -181,7 +181,7 @@ export default function About() {
       <div className="aboutContainer">
         <h1>About</h1>
         <p>
-          Aspiring Product Manager with a background in web development,
+          I'm a Computer Science graduate with a background in web development,
           embedded systems, and UX design. Passionate about creating
           user-centric products that balance business goals and technology.
           Currently exploring how product thinking can shape great digital
