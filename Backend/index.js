@@ -18,7 +18,20 @@ const FeaturedSchema = require('./models/Featured')
 require('dotenv').config();
 const mongoUrl = process.env.mongoURL;
 
-server.use(cors());
+const corsOptions = {
+  origin: [
+    'https://muditmehta.me',
+    'https://www.muditmehta.me',
+    'https://muditmehta.dev',
+    'https://www.muditmehta.dev'
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true // only if needed
+};
+
+server.use(cors(corsOptions));
+server.options('*', cors(corsOptions)); // preflight support
+
 server.use(express.json());
 
 
