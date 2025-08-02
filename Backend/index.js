@@ -51,6 +51,13 @@ async function connectDB() {
 
 
   // API route for fetching characters
+
+server.get("/", (req, res) => {
+  res.send("hi");
+});
+
+
+
   server.get("/getProjects", async (req, res) => {
     try {
     
